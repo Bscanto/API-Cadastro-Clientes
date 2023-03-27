@@ -1,0 +1,90 @@
+<!-- Importando cabeçalho (header) -->
+<%- include ('partials/header') %>
+
+<body>
+
+    <!--Importando Barra de navegação superior(navbar)  -->
+    <%- include ('partials/navbar') %>
+
+
+    <div class="container">
+        <!-- card principal pagina com conteúdo -->
+        <div class="card" id="editar">
+            <div class="card-header">
+                <div class="card-body">
+
+                    <h1>Resultados da pesquisa</h1>
+
+
+            <% if (resultado) { %>
+                    <% if (Array.isArray(resultado) && resultado.length > 0) { %>
+                    <ul>
+                        <% resultado.forEach((item) => { %>
+                        <li>
+                            <table id="tblTowerSubTowerLot" class="table table-bordered table-striped mt-5">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Nome</th>
+                                        <th>Sexo</th>
+                                        <th>Nascimento</th>
+                                        <th>Idade</th>
+                                        <th>Cidade</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td item="id"><%= item.id  %></td>
+                                        <td item="nome"><%= item.nome  %></td>
+                                        <td item="sexo"><%= item.sexo  %></td>
+                                        <td item="nascimento"><%= item.nascimento  %></td>
+                                        <td item="idade"><%= item.idade  %></td>
+                                        <td item="cidade"><%= item.cidade  %></td>
+                                        <td item="estado"><%= item.estado  %></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <% }) %>
+                    </ul>
+                        <% } else if (typeof resultado === 'object' && resultado !== null) { %>
+                            <p><table id="tblTowerSubTowerLot" class="table table-bordered table-striped mt-5">
+                                <thead>
+                                  <tr>
+                                    <th>id</th>
+                                        <th>Nome</th>
+                                        <th>Sexo</th>
+                                        <th>Nascimento</th>
+                                        <th>Idade</th>
+                                        <th>Cidade</th>
+                                        <th>Estado</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td><%= resultado.id %></td>
+                                    <td><%= resultado.nome %></td>
+                                    <td><%= resultado.sexo %></td>
+                                    <td><%= resultado.nascimento %></td>
+                                    <td><%= resultado.idade %></td>
+                                    <td><%= resultado.cidade %></td>
+                                    <td><%= resultado.estado %></td>
+                                  </tr>
+                                </tbody>
+                              </table></p>
+                                 <% } else { %>
+                                     <p>Nenhum resultado encontrado.</p>
+                                    <% } %>
+            <% } else { %>
+            <p>Ocorreu um erro na pesquisa.</p>
+            <% } %>
+
+
+                    <a class="btn btn-primary" href="/">Voltar</a>
+                </div>
+            </div>
+</body>
+
+<!-- Importando footer(rodape) -->
+<%- include ('partials/footer') %>

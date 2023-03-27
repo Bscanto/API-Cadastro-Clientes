@@ -1,0 +1,111 @@
+<!-- Importando cabeçalho (header) -->
+<%- include ('partials/header') %>
+
+<body>
+
+    <!--Importando barra navegação (navbar)  -->
+    <%- include ('partials/navbar') %>
+
+    <br>
+    <div class="container">
+        <!-- card principal pagina com conteúdo -->
+        <div class="card" id="principal">
+            <div class="card-header">
+                <h1>Cadastro de Clientes</h1>
+            </div>
+            <div class="card-body">
+
+                
+                  <form method="get" action="/pesquisar">
+                    <div class="barra-pesquisa">
+                      <label for="search">Pesquisar:</label>
+                      <input type="text" id="search" placeholder="Digite aqui..." name="valor">
+                      <select name="tipo">
+                        <option value="cidade_nome">Cidade pelo nome</option>
+                        <option value="cidade_estado">Cidade pelo estado</option>
+                        <option value="cliente_nome">Cliente pelo nome</option>
+                        <option value="cliente_id">Cliente pelo ID</option>
+                      </select>
+                      <button class="btn btn-primary" type="submit">Buscar</button>
+                    </div>
+                  </form>
+                <form>
+                        <div class="/">
+                            <div class="input-container">
+                                <ul id="principal"></ul>
+
+                                <!-- Botão para direcionar pagina de Adicionar Cliente -->
+                                <div class="float">
+                                </div>
+                                <br>
+                                <h1>Clientes</h1>
+                                <br>
+                                <a class="btn btn-success" href="/cadastrar">Adicionar Cadastro</a>
+
+                                <!-- Criando tabela para inserir os dadoscadastrados -->
+                                <table id="tblTowerSubTowerLot" class="table table-bordered table-striped mt-5">
+                                    <thead>
+                                        <tr>
+                                            <th (ng-click="orderBy('id')" )>Id</th>
+                                            <th>Nome</th>
+                                            <th>Sexo</th>
+                                            <th>Nascimento</th>
+                                            <th>Idade</th>
+                                            <th>Cidade</th>
+                                            <th>Estado</th>
+                                            <th>Editar</th>
+                                            <th>Excluir</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% cadastros.forEach(cadastro => { %>
+                                        <tr>
+                                            <td id="id"><%= cadastro.id %></td>
+                                            <td id="nome"><%= cadastro.nome  %></td>
+                                            <td id="sexo"><%= cadastro.sexo  %></td>
+                                            <td id="nascimento"><%= cadastro.nascimento  %></td>
+                                            <td id="idade"><%= cadastro.idade  %></td>
+                                            <td id="cidade"><%= cadastro.cidade  %></td>
+                                            <td id="estado"><%= cadastro.estado  %></td>
+                                            <td><a href="/editar/<%= cadastro.id %>" class="btn btn-primary">Editar</a></td> 
+                                            
+                                            <td>
+                                                <form method="post" action="/excluir/<%= cadastro.id %>" style="display: inline-block;" onsubmit="confirmDelete(event, this)">
+                                                    <input type="hidden" name="cadastro" value="<%= cadastro.id %>">
+                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="confirmDelete(id)" >Excluir</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- <script>
+    function confirmDelete(id) {
+        if (confirm("Tem certeza que deseja excluir este cadastro?")) {
+            // Se o usuário confirmar, envia o formulário para excluir o cadastro
+            document.querySelector(`form[action="/excluir/${id}"]`).submit();
+        }
+    }
+</script> -->
+        </div>
+    </div>
+</body>
+
+<!-- Importando footer(rodape) -->
+<%- include ('partials/footer') %>
+<script>
+function confirmDelete(event, form) {
+     event.preventDefault();
+     var decision = confirm("Tem certeza que deseja excluir este cadastro?")
+        if (decision){
+            // Se o usuário confirmar, envia o formulário para excluir o cadastro
+           form.submit();
+           // document.querySelector(`form[action="/excluir/${id}"]`).submit();
+        }
+    }
+</script>

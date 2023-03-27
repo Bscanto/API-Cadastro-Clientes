@@ -1,0 +1,117 @@
+<!-- Importando cabeçalho (header) -->
+<%- include ('partials/header') %>
+
+<body>
+
+  <!--Importando Barra de navegação superior(navbar)  -->
+  <%- include ('partials/navbar') %>
+
+
+  <div class="container">
+    <!-- card principal pagina com conteúdo -->
+    <div class="card" id="home">
+      <div class="card-header">
+        <h1>Cadastrar Clientes</h1>
+      </div>
+      <div class="card-body">
+
+        <form method="POST" action="/salvarcadastro">
+          <!-- Cadastro Nome Cliente -->
+          <div class="input-container2">
+            <label for="nome">Nome</label>
+            <input type="text" placeholder="Digite o nome do cliente" id="nome" name="nome">
+          </div>
+
+          <br>
+
+          <!-- Cadastro Sexo -->
+          <div class="input-container2">
+            <div class="styled-select">
+              <label for="sexo">Sexo</label>
+              <select name="sexo" id="sexo">
+                <option value="" disabled selected>Selecione o sexo</option>
+                <option value="femi">Feminino</option>
+                <option value="masc">Masculino</option>
+                <option value="mt">Outros</option>
+              </select>
+            </div>
+          </div>
+          <br>
+
+          <!-- Cadastro Data Nascimento -->
+          <div class="input-container2">
+            <label for="nascimento">Data de Nascimento</label>
+            <input type="date" placeholder="Digite a data de nascimento" id="nascimento" name="datanascimento"
+              format="date">
+          </div>
+          <br>
+
+          <!-- Cadastro idade -->
+          <div class="input-container2">
+            <label for="idade">idade</label>
+            <input type="text" placeholder="Digite a idade do cliente" id="idade" name="idade">
+          </div>
+          <br>
+
+          <!-- Cadastro Cidade -->
+          <div class="input-container2">
+            <label for="nome">Cidade</label>
+            <input type="text" placeholder="Digite a Cidade do cliente" id="cidade" name="cidade">
+          </div>
+          <br>
+
+          <!-- Cadastro Estado -->
+          <div class="input-container2">
+            <div class="styled-select">
+              <label for="estado">Estado</label>
+              <select name="estado" id="estado">
+                <option value="" disabled selected>Selecione o estado</option>
+                <option value="ac">AC</option>
+                <option value="al">AL</option>
+                <option value="ap">AP</option>
+                <option value="am">AM</option>
+                <option value="ba">BA</option>
+                <option value="ce">CE</option>
+                <option value="df">DF</option>
+                <option value="es">ES</option>
+                <option value="go">GO</option>
+                <option value="ma">MA</option>
+                <option value="mt">MT</option>
+                <option value="ms">MS</option>
+                <option value="mg">MG</option>
+                <option value="pa">PA</option>
+                <option value="pb">PB</option>
+                <option value="pr">PR</option>
+                <option value="pe">PE</option>
+                <option value="pi">PI</option>
+                <option value="rj">RJ</option>
+                <option value="rn">RN</option>
+                <option value="rs">RS</option>
+                <option value="ro">RO</option>
+                <option value="rr">RR</option>
+                <option value="sc">SC</option>
+                <option value="sp">SP</option>
+                <option value="se">SE</option>
+                <option value="to">TO</option>
+              </select>
+            </div>
+          </div>
+          <br>
+
+          <!-- Botão Salvar -->
+          <div class="button-container-button">
+            <i class="btn-salvar" aria-hidden="true"></i>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </form>
+      </div>
+      <br>
+
+      <br>
+    </div>
+    <!-- botão voltar  pagina principal -->
+    <a class="btn btn-primary" href="/">Voltar</a>
+  </div>
+</body>
+
+<!-- Importando footer(rodape) -->
+<%- include ('partials/footer') %>

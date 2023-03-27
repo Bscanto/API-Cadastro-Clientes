@@ -1,0 +1,59 @@
+<!-- Importando cabeçalho (header) -->
+<%- include ('partials/header') %>
+
+<body>
+
+  <!--Importando Barra de navegação superior(navbar)  -->
+  <%- include ('partials/navbar') %>
+
+
+  <div class="container">
+    <!-- card principal pagina com conteúdo -->
+    <div class="card" id="editar">
+      <div class="card-header">
+        <h1>Cadastrar Clientes</h1>
+      </div>
+      <div class="card-body">
+      
+        <form method="post"  action="/atualizarcadastro/<%= cadastro.id %>">
+          <input type="text" name="nome" value="<%= cadastro.nome %>">
+          <input type="text" name="sexo" value="<%= cadastro.sexo %>">
+          <input type="date" name="datanascimento" value="<%= cadastro.nascimento %>">
+          <input type="number" name="idade" value="<%= cadastro.idade %>">
+          <input type="text" name="cidade" value="<%= cadastro.cidade %>">
+          <input type="text" name="estado" value="<%= cadastro.estado %>">
+
+          
+          <button type="submit" class="btn btn-primary">Atualizar</button>
+        </form>
+        
+
+        <form method="post" id="excluirForm" action="/excluir/<%= cadastro.id %>" onsubmit="confirmDelete(event, this)">
+          <input type="hidden" name="cadastro" value="<%= cadastro.id %>">
+          <button type="submit" class="btn btn-danger" onclick="excluirCadastro()">Excluir</button>
+        </form>
+      
+      </div>
+      <br>
+      <br>
+    </div>
+    <!-- botão voltar  pagina principal -->
+    <a class="btn btn-primary" href="/">Voltar</a>
+    
+  </div>
+</body>
+
+<!-- Importando footer(rodape) -->
+<%- include ('partials/footer') %>
+
+<script>  // script para confirmação exclusão
+  function confirmDelete(event, form) {
+       event.preventDefault();
+       var decision = confirm("Tem certeza que deseja excluir este cadastro?")
+          if (decision){
+              // Se o usuário confirmar, envia o formulário para excluir o cadastro
+             form.submit();
+             // document.querySelector(`form[action="/excluir/${id}"]`).submit();
+          }
+      }
+  </script>
