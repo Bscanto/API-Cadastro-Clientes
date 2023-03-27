@@ -85,7 +85,7 @@ npm install --save mysql2
 ```
 npx nodemon index.js
 ```
-9. Abra um navegador da web e acesse http://localhost:8080 para ver a aplicação em execução.
+10. Abra um navegador da web e acesse http://localhost:8080 para ver a aplicação em execução.
 ### Pronto Aplicação deve estar rodando !
 
 >Com esses passos, você deve ser capaz de executar a aplicação localmente em sua máquina. Se você tiver problemas ao seguir esses passos, certifique-se de que todas as dependências foram instaladas corretamente e que todas as variáveis de ambiente foram definidas corretamente.
