@@ -44,7 +44,7 @@ Para executar esta aplicação, você precisará seguir os seguintes passos:
 1. Crie uma pasta na sua area de trabalho e nomeie;
 2. Dentro dessa pasta clique com o botão direito do mouse e abra o terminal do git  (Git bach here);
 3. Abra código-fonte da aplicação a partir do repositório GitHub:
-[Codigo do projeto para download](https://github.com/Bscanto/Api-Cadastro-Clientes.git);
+[Codigo do projeto para download](https://github.com/Bscanto/API-Cadastro-Clientes/tree/main/api);
 4. Clique em code e copie a url do repositorio: ![]( )
 5. No terminal do git digite:
 ```
