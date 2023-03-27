@@ -77,7 +77,11 @@ npm install --save mysql2
 ```
 7. Abra o mysql workbench, e crie o banco de dados  como no exemplo abaixo:
 ![Criar banco de dados](https://user-images.githubusercontent.com/75629284/228021101-37d3e7c4-0bcc-4872-9bd1-de4ffcfc4d08.mp4);
-8. No terminal do visual studio code digite o seguinte comando:
+
+8. Na pasta database, arquivo database.js, trocar a senha do banco de dados para sua senha do mysql:
+![dsBuffer bmp](https://user-images.githubusercontent.com/75629284/228030349-3a9cf148-3ea7-45ee-81dd-8039d574f919.png)
+
+9. No terminal do visual studio code digite o seguinte comando:
 ```
 npx nodemon index.js
 ```
