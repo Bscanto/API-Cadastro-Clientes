@@ -58,23 +58,9 @@ npm install para instalar as dependências do projeto:
 npm init -y
 ```
 ```
-npm install -g nodemon
+npm install 
 ```
-```
-npm install express --save
-```
-```
-npm install ejs --save
-```
-```
-npm install body-parser --save
-```
-```
-npm install --save sequelize
-```
-```
-npm install --save mysql2
-```
+
 7. Abra o mysql workbench, e crie o banco de dados  como no exemplo abaixo:
 ![Criar banco de dados](https://user-images.githubusercontent.com/75629284/228021101-37d3e7c4-0bcc-4872-9bd1-de4ffcfc4d08.mp4);
 
