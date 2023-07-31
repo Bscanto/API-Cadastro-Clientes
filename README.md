@@ -90,3 +90,9 @@ npx nodemon index.js
 
 >Com esses passos, você deve ser capaz de executar a aplicação localmente em sua máquina. Se você tiver problemas ao seguir esses passos, certifique-se de que todas as dependências foram instaladas corretamente e que todas as variáveis de ambiente foram definidas corretamente.
 
+# Abaixo imagens das telas:
+![tela Principal](https://github.com/Bscanto/API-Cadastro-Clientes/blob/main/Tela%20Principal.jpeg)
+
+![tela cadastro](https://github.com/Bscanto/API-Cadastro-Clientes/blob/main/Tela%20cadastro.jpeg)
+
+![tela pesquisa](https://github.com/Bscanto/API-Cadastro-Clientes/blob/main/Tela%20pesquisa.jpeg)
