@@ -163,6 +163,6 @@ app.get('/pesquisar', async (req, res) => {
   }
 });
 
-app.listen(8080, () => {
+app.listen(8081, () => {
     console.log("App rodando!");
 });
