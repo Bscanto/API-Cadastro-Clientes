@@ -48,7 +48,7 @@ Para executar esta aplicação, você precisará seguir os seguintes passos:
 4. Clique em code e copie a url do repositorio: ![]( )
 5. No terminal do git digite:
 ```
-git clone https://github.com/Bscanto/API-Cadastro-Clientes/tree/main/api
+git clone [https://github.com/Bscanto/API-Cadastro-Clientes/tree/main/api](https://github.com/Bscanto/API-Cadastro-Clientes.git)
 ```
 
 6. Abra o visual studio code, abra o terminal do vscode (ctrl '), navegue até a pasta raiz do projeto  e execute os comandos:
